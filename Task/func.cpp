@@ -12,6 +12,11 @@ void addTask(std::string task) {
 void getTask(int index) {
 	std::vector<std::string> lists;
 	std::ifstream in("lists.txt");
+	if (in.eof()) {
+		printf("task list is empty");
+		return;
+	}
+
 	if (in.is_open()) {
 		while (in) {
 			std::string buff;
@@ -20,15 +25,16 @@ void getTask(int index) {
 		}
 	}
 	in.close();
-	if (index < lists.size()) {
-		printf("%s", lists[index].c_str());
-	}
 }
 
 void getTaskList() {
 	std::ifstream in("lists.txt");
 	int index = 0;
 	std::string buff;
+	if (in.eof()) {
+		printf("task list is empty");
+		return;
+	}
 
 	if (in.is_open()) {
 		while (in) {
@@ -137,23 +143,22 @@ void findFinshTask(std::string task) {
 void deleteTask(int index) {
 	//读取
 	std::vector<std::string> lists;
-	std::ifstream in("lists.txt");
+	std::string buff;
+	std::ifstream in("lists.txt", std::ios::in);
 	if (in.is_open()) {
 		while (in) {
-			std::string buff;
 			getline(in, buff);
 			lists.push_back(buff);
 		}
 	}
 	in.close();
 	if (index < lists.size()) {
-		printf("delete task:%s", lists[index].c_str());
+		printf("delete task:%s",lists[index].c_str());
 		lists.erase(lists.begin() + index);
 	}
 
 	// 写入
 	std::ofstream out("lists.txt", std::ios::out);
-	
 	for (auto p = lists.begin(); p != lists.end(); p++) {
 		if (*p != "" && *p != "\n" && *p != "\t" && *p != " " && *p != "\0") {
 			out << *p << std::endl;
@@ -164,12 +169,13 @@ void deleteTask(int index) {
 
 void deleteFinshedTask(int index)
 {
+	printf("%d", index);
 	//读取
 	std::vector<std::string> lists;
-	std::ifstream in("finshed.txt");
+	std::string buff;
+	std::ifstream in("finshed.txt", std::ios::in);
 	if (in.is_open()) {
 		while (in) {
-			std::string buff;
 			getline(in, buff);
 			lists.push_back(buff);
 		}
@@ -182,7 +188,6 @@ void deleteFinshedTask(int index)
 
 	// 写入
 	std::ofstream out("finshed.txt", std::ios::out);
-
 	for (auto p = lists.begin(); p != lists.end(); p++) {
 		if (*p != "" && *p != "\n" && *p != "\t" && *p != " " && *p != "\0") {
 			out << *p << std::endl;

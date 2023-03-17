@@ -18,24 +18,8 @@ int main(int argc, char *argv[]) {
 	if (argc == 2) {
 		if (strcmp(argv[1], "init") == 0) {
 			init();
+			return 0;
 		} 
-		else if (strcmp(argv[1], "add") == 0) {
-			addTask(argv[2]);
-		} 
-		else if (strcmp(argv[1], "get") == 0) {
-			if (strcmp(argv[2], "-t") == 0) {
-				getTaskList();
-			}
-			else if (strcmp(argv[2], "-f") == 0) {
-				getFinshList();
-			}
-			else{
-				printf("error");
-			}
-		}
-		else if (strcmp(argv[1], "finsh") == 0) {
-			finshTask(atoi(argv[2]));
-		}
 		else if (strcmp(argv[1], "help") == 0) {
 			printf(
 				"task init				------init task.\n"
@@ -51,12 +35,34 @@ int main(int argc, char *argv[]) {
 				"task finsh <index>		------finshed the <index>th.\n"
 				"task help				------get help.\n"
 			);
+			return 0;
 		}
-		else {
-			printf("error");
-		}
+		printf("error");
 	} 
 	else if (argc == 3) {
+		if (strcmp(argv[1], "add") == 0) {
+			addTask(argv[2]);
+			return 0;
+		}
+		else if (strcmp(argv[1], "get") == 0) {
+			if (strcmp(argv[2], "-t") == 0) {
+				getTaskList();
+			}
+			else if (strcmp(argv[2], "-f") == 0) {
+				getFinshList();
+			}
+			else {
+				printf("error");
+			}
+			return 0;
+		}
+		if (strcmp(argv[1], "finsh") == 0) {
+			finshTask(atoi(argv[2]));
+			return 0;
+		}
+		printf("error");
+	} 
+	else if (argc == 4) {
 		if (strcmp(argv[1], "get") == 0) {
 			if (strcmp(argv[2], "-t")) {
 				getTask(atoi(argv[3]));
@@ -67,28 +73,37 @@ int main(int argc, char *argv[]) {
 			else {
 				printf("error");
 			}
-			addTask(argv[2]);
-		} 
-		else if (strcmp(argv[1], "delete") == 0) {
-			if (strcmp(argv[2], "-t")) {
+			return 0;
+		}
+		if (strcmp(argv[1], "delete") == 0) {
+			if (strcmp(argv[2], "-t") == 0) {
+				deleteTask(atoi(argv[3]));
+				printf("-t\n");
+			}
+			else if (strcmp(argv[2], "-f") == 0) {
+				deleteFinshedTask(atoi(argv[3]));
+				printf("-f\n");
+			}
+			else {
+				printf("error");
+			}
+			return 0;
+		}
+		if (strcmp(argv[1], "find") == 0) {
+			printf("find\n");
+			if (strcmp(argv[2], "-t") == 0) {
 				findTask(argv[3]);
 			}
-			else if (strcmp(argv[2], "-f")) {
+			else if (strcmp(argv[2], "-f") == 0) {
 				findFinshTask(argv[3]);
 			}
 			else {
 				printf("error");
 			}
-			addTask(argv[2]);
-
-		} 
-		else if (strcmp(argv[1], "find") == 0) {
-			getFinshTask(atoi(argv[2]));
-		} 
-		else {
-			printf("error");
+			return 0;
 		}
-	} 
+		printf("error");
+	}
 	else {
 		printf("error");
 	}
