@@ -2,26 +2,9 @@
 #pragma warning(disable : 4996)
 
 void addTask(std::string task) {
-	//读取
-	std::vector<std::string> lists;
-	std::ifstream in("lists.txt");
-	if (in.is_open()) {
-		while (in) {
-			std::string buff;
-			getline(in, buff);
-			lists.push_back(buff);
-		}
-	}
-	in.close();
-	lists.push_back(task);
-	
 	// 写入
-	std::ofstream out("lists.txt",std::ios::out);
-	for (auto p = lists.begin(); p != lists.end();p++) {
-		if (*p != "" && *p != "\n" && *p != "\t" && *p != " " && *p != "\0") {
-			out << *p << std::endl;
-		}
-	}
+	std::ofstream out("lists.txt",std::ios::app);
+	out << task << std::endl;
 	out.close();
 	printf("add task:%s", task.c_str());
 }
@@ -42,7 +25,7 @@ void getTask(int index) {
 	}
 }
 
-void getList() {
+void getTaskList() {
 	std::ifstream in("lists.txt");
 	int index = 0;
 	std::string buff;
@@ -102,25 +85,9 @@ void finshTask(int index) {
 	}
 	out.close();
 
-	std::vector<std::string> finshed_list;
-	in.open("finshed.txt", std::ios::in);
-	if (in.is_open()) {
-		while (in) {
-			std::string buff;
-			getline(in, buff);
-			finshed_list.push_back(buff);
-		}
-	}
-	in.close();
-	finshed_list.push_back(finshed);
-	
 	// 写入
-	out.open("finshed.txt", std::ios::out);
-	for (auto p = finshed_list.begin(); p != finshed_list.end(); p++) {
-		if (*p != "" && *p != "\n" && *p != "\t" && *p != " " && *p != "\0") {
-			out << *p << std::endl;
-		}
-	}
+	out.open("finshed.txt", std::ios::app);
+	out << finshed << std::endl;
 	out.close();
 	printf("finsh task:%s", finshed.c_str());
 }
@@ -195,7 +162,36 @@ void deleteTask(int index) {
 	out.close();
 }
 
-void getFinsh() {
+void deleteFinshedTask(int index)
+{
+	//读取
+	std::vector<std::string> lists;
+	std::ifstream in("finshed.txt");
+	if (in.is_open()) {
+		while (in) {
+			std::string buff;
+			getline(in, buff);
+			lists.push_back(buff);
+		}
+	}
+	in.close();
+	if (index < lists.size()) {
+		printf("delete task:%s", lists[index].c_str());
+		lists.erase(lists.begin() + index);
+	}
+
+	// 写入
+	std::ofstream out("finshed.txt", std::ios::out);
+
+	for (auto p = lists.begin(); p != lists.end(); p++) {
+		if (*p != "" && *p != "\n" && *p != "\t" && *p != " " && *p != "\0") {
+			out << *p << std::endl;
+		}
+	}
+	out.close();
+}
+
+void getFinshList() {
 	std::ifstream in("finshed.txt");
 	std::string buff;
 	int index = 0;
