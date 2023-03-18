@@ -12,8 +12,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Cosmos\classes\Atom.h" />
+    <ClInclude Include="src\Cosmos\Core\Core.h" />
     <ClInclude Include="src\Cosmos\template\Action.h" />
     <ClInclude Include="src\Cosmos\template\Func.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -64,7 +68,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CM_PLATFORM_WINDOWS;;CM_BUILD_DLL;CM_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>D:\Dream\Coscom\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -80,7 +84,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);CM_PLATFORM_WINDOWS;;CM_BUILD_DLL;CM_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>D:\Dream\Coscom\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

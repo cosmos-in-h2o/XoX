@@ -1,4 +1,8 @@
 #include <Cosmos/template/Action.h>
+
+
+
+
 class Foo {
 public:
 	int aa;
@@ -23,7 +27,7 @@ int main() {
 	a.addFunc(&f, &Foo::func2);
 	a.addFunc(&f, &Foo::func2);
 	a.addFunc(&f, &Foo::func2);
-
+	a.addFunc([](const char*) {printf("lambda\n"); });
 	a("aaa");
 	system("pause");
 	return 0;
