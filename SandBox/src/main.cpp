@@ -20,8 +20,10 @@ int main() {
 	Cosmos::Action<Foo, const char*> a;
 	a.addFunc(&Foo::func);
 	a.addFunc(&f, &Foo::func2);
-	a.addFunc(&func);
 	a.addFunc(&f, &Foo::func2);
+	a.addFunc(&f, &Foo::func2);
+	a.addFunc(&f, &Foo::func2);
+
 	a("aaa");
 	system("pause");
 	return 0;

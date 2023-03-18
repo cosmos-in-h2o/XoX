@@ -40,9 +40,11 @@ namespace Cosmos {
 		}
 
 		inline void addFunc(MT* member, const member_fun& fun) {
+			this->mfun_add.push_back(this->cfun_list.size() + this->mfun_list.size());
 			this->member.push_back(member);
 			this->mfun_list.push_back(fun);
-			this->mfun_add.push_back(this->cfun_list.size()+this->mfun_list.size());
+			
+			printf("%d\n", this->cfun_list.size() + this->mfun_list.size());
 		}
 
 		//执行函数
@@ -74,7 +76,11 @@ namespace Cosmos {
 			
 			//都不为空就一起执行
 			for (int index = 0;;) {
+				printf("%d",index);
 				if (cfun_list_iter == this->cfun_list.end() && mfun_list_iter == this->mfun_list.end()) {
+					return;
+				}
+				if (index >= this->mfun_list.size() + cfun_list.size()) {
 					return;
 				}
 				//判断是否为成员函数
