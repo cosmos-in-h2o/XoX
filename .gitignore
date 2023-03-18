@@ -1,0 +1,14 @@
+#输出文件
+/x64
+/Task/x64
+/Cosmos/x64
+/SandBox/x64
+/bin
+/bin-int
+#配置文件
+/.vs
+#指定后缀名
+*.pbd
+*.db
+*.sln
+#指定文件

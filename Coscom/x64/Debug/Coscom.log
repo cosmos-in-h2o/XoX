@@ -1,0 +1,20 @@
+﻿  main.cpp
+D:\Dream\Coscom\Action.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Dream\Coscom\Atom.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Dream\Coscom\Action.h(47,1): warning C4267: “参数”: 从“size_t”转换到“_Ty”，可能丢失数据
+          with
+          [
+              _Ty=int
+          ]
+D:\Dream\Coscom\Action.h(47): message : 在编译 类 模板 成员函数“void Cosmos::Action<Foo,const char *>::addFunc(MT *,void (__cdecl Foo::* const &)(const char *))”时
+          with
+          [
+              MT=Foo
+          ]
+D:\Dream\Coscom\main.cpp(21): message : 查看对正在编译的函数 模板 实例化“void Cosmos::Action<Foo,const char *>::addFunc(MT *,void (__cdecl Foo::* const &)(const char *))”的引用
+          with
+          [
+              MT=Foo
+          ]
+D:\Dream\Coscom\main.cpp(20): message : 查看对正在编译的 类 模板 实例化“Cosmos::Action<Foo,const char *>”的引用
+  Coscom.vcxproj -> D:\Dream\x64\Debug\Coscom.exe
