@@ -137,5 +137,4 @@ namespace Cosmos {
 		}
 	};
 };
-
 #endif
