@@ -42,7 +42,7 @@ namespace Cosmos {
 		inline void addFunc(MT* member, const member_fun& fun) {
 			this->member.push_back(member);
 			this->mfun_list.push_back(fun);
-			this->mfun_add.push_back(this->cfun_list.size());
+			this->mfun_add.push_back(this->cfun_list.size()+this->mfun_list.size());
 		}
 
 		//执行函数
@@ -73,7 +73,7 @@ namespace Cosmos {
 			}
 			
 			//都不为空就一起执行
-			for (int index = 0;; index++) {
+			for (int index = 0;;) {
 				if (cfun_list_iter == this->cfun_list.end() && mfun_list_iter == this->mfun_list.end()) {
 					return;
 				}
@@ -88,6 +88,7 @@ namespace Cosmos {
 					(*cfun_list_iter)(args...);
 					cfun_list_iter++;
 				}
+				index++;
 			}
 		}
 
