@@ -24,12 +24,18 @@
     <ClInclude Include="src\Cosmos\classes\Atom.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\Cosmos\Core\Core.h">
+    <ClInclude Include="src\Cosmos\core\Core.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cosmos\classes\Debug.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cosmos\classes\Debug.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
