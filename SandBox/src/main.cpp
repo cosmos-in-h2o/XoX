@@ -1,8 +1,6 @@
-#include <Cosmos/template/Action.h>
-
-
-
-
+import xox.Template.Delegata;
+#include <cstdio>
+#include <cstdlib>
 class Foo {
 public:
 	int aa;
@@ -21,7 +19,7 @@ void func(const char* c) {
 int main() {
 	typedef void(*common_fun)();
 	Foo f;
-	Cosmos::Action<Foo, const char*> a;
+	xox::Action<Foo, const char*> a;
 	a.addFunc(&Foo::func);
 	a.addFunc(&f, &Foo::func2);
 	a.addFunc(&f, &Foo::func2);

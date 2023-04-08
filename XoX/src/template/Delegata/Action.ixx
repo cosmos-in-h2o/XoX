@@ -1,8 +1,8 @@
-#ifndef ACTION_H
-#define ACTION_H
-#include <Cosmos/classes/Atom.h>
+module ;
 #include <list>
-namespace Cosmos {
+export module xox.Template.Delegata.Action;
+import xox.Ecs.Atom;
+namespace xox {
 	///----------------------------------------------------------------------------------------------------
 	/// Action
 	///----------------------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ namespace Cosmos {
 	/// 说明：MT为成员类型，用于调用成员函数
 	///----------------------------------------------------------------------------------------------------
 	
-	template<typename MT,typename ... Args>
+	export template<typename MT,typename ... Args>
 	class Action:public Atom
 	{
 	private:
@@ -137,4 +137,3 @@ namespace Cosmos {
 		}
 	};
 };
-#endif
