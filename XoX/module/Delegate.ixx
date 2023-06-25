@@ -1,7 +1,7 @@
 module;
 #include <functional>
 #include <list>
-export module xox.delegata;
+export module xox.delegate;
 using std::list;
 using std::function;
 namespace xox {
@@ -11,15 +11,16 @@ namespace xox {
         typedef list<function<RT_(AT_...)>> FuncList;//func list
         typedef function<RT_(AT_...)> SFunc;//single func
     private:
-        FuncList *func_list;
+        FuncList func_list;
     public:
-        Func() { this->func_list = new FuncList(); }
-        ~Func(){
-            delete this->func_list;
-            this->func_list=nullptr;
+        Func()=default;
+        ~Func()=default;
+        Func(const SFunc &s_func) {
+            this->func_list.push_back(s_func);
         }
-        Func(const SFunc &s_func) {}
-        Func(SFunc &&s_func) {}
+        Func(SFunc &&s_func) {
+            this->func_list.push_back(std::forward<SFunc>(s_func));
+        }
         Func(const Func& func_obj){}
         Func(Func&& func_obj){}
 
@@ -28,5 +29,5 @@ namespace xox {
         inline RT_ invoke(AT_...args){*this(args...);}
     };
 
-    export template<typename AT_> using Action=Func<void,AT_...>;
+    export template<typename ...AT_> using Action=Func<void,AT_...>;
 }

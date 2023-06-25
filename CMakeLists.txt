@@ -8,7 +8,7 @@ cmake_policy(SET CMP0091 NEW)
 project(XoX LANGUAGES CXX C)
 
 # target
-add_executable(XoX "" XoX/src/XoX.ixx XoX/src/Delegata.ixx XoX/src/Memory.ixx XoX/src/Memory/SPool.ixx XoX/src/Memory/HPool.ixx)
+add_executable(XoX "" XoX/module/XoX.ixx XoX/module/Delegate.ixx XoX/module/Memory/SPool.ixx XoX/module/Memory.ixx SandBox/src/main.cc XoX/module/Log.ixx)
 set_target_properties(XoX PROPERTIES OUTPUT_NAME "XoX")
 set_target_properties(XoX PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/linux/x86_64/release")
 add_custom_command(OUTPUT output_XoX_9664B4B6
