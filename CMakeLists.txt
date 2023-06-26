@@ -9,4 +9,4 @@ add_executable(XoX XoX/module/xox.ixx
         XoX/module/memory/stack_pool.ixx
         XoX/module/memory/smart_stack_pool.ixx
         XoX/src/smart_stack_pool.cc
-        XoX/module/delegate.ixx)
+        XoX/module/delegate.ixx SandBox/src/main.cc)
