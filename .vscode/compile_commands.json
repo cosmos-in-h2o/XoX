@@ -1,6 +1,0 @@
-[
-{
-  "directory": "/home/dream/Program/XoX",
-  "arguments": ["/usr/bin/gcc", "-m64", "-x", "c++", "-c", "XoX/src/xox.ixx", "-o", "build/.objs/XoX/linux/x86_64/XoX/src/xox.ixx.o"],
-  "file": "XoX/src/xox.ixx"
-}]
