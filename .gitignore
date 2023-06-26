@@ -7,3 +7,4 @@ cmake-build-release/
 .vs/
 .vscode/
 target/
+CMakeLists.txt
