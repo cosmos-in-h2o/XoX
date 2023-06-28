@@ -24,7 +24,7 @@ namespace xox {
         Func(const Func& func_obj){
             this->func_list=func_obj.func_list;
         }
-        Func(Func&& func_obj) noexcept {Func
+        Func(Func&& func_obj) noexcept {
             this->func_list=std::move(func_obj);
         }
 

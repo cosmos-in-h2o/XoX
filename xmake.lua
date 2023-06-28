@@ -1,19 +1,30 @@
-add_languages("c++20")
-add_toolchains("clang")
---add_rules("mode.debug","mode.release")
+--config
+local libXoXdir = "/home/dream/Program/XoX/target/"
+local compiler = "clang"
 
-target("XoX")
-    set_kind("shared")
-    set_targetdir("./target/")
-    add_files("XoX/**.ixx")
-    add_files("XoX/**.cc")
+
+
+
+
+
+
+
+add_languages("c++20")
+add_toolchains(compiler)
+--add_rules("mode.debug","mode.release")
+local libName = "XoX"
+target(libName)
+set_kind("shared")
+set_targetdir(libXoXdir)
+add_files("./XoX/src/**.ixx")
 target_end()
 
 target("SandBox")
-    set_kind("binary")
-    set_targetdir("./target/")
-    add_files("XoX/src/**.ixx")
-    add_files("SandBox/src/main.cc")
-    add_linkdirs("/home/dream/Program/XoX/target/")
-    add_links("XoX")
+set_kind("binary")
+set_targetdir("./target/")
+add_files("./XoX/src/**.ixx")
+add_files("./SandBox/src/**.cc")
+add_linkdirs(libXoXdir)
+add_links(libName)
 target_end()
+
