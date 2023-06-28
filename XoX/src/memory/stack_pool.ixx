@@ -1,15 +1,65 @@
 module;
 #include<list>
+export module xox.memory.stack_pool;
+import xox.log;
 #include <cstdlib>
 #include <cstring>
-module xox.memory.stack_pool;
+
 #define ERROR
+using std::list;
+namespace xox{
+    //stack pool
+    export class SPool{
+    private:
+        size_t size;//byte number
+        size_t pos;
+        void* memory;
+        list<void**> ptr_list;
+    public:
+        SPool();
+        explicit SPool(size_t);
+        ~SPool();
+        SPool(const SPool&);
+        SPool(SPool&&) noexcept;
+
+        void resize(size_t);
+
+        template<typename T_>
+        void create(T_*& ptr){
+            if(this->isEnough(sizeof(T_))) {
+                ERROR
+                return;
+            }
+            this->ptr_list.push_back((void**)&ptr);
+            ptr=(T_*)((size_t)this->memory+this->pos);
+            this->pos+=sizeof(T_);
+        }
+        template<typename T_,typename...AT_>
+        void create(T_*& ptr,AT_... args){
+            if(this->isEnough(sizeof(T_))) {
+                ERROR
+                log::error(this,"size is too small.\n");
+                return;
+            }
+            this->ptr_list.push_back((void**)&ptr);
+            ptr=(T_*)((size_t)this->memory+this->pos);
+            *ptr=T_(this,std::forward<AT_>(args)...);
+            this->pos+=sizeof(T_);
+        }
+
+        bool isEnough(size_t) const;
+
+        void destroy();
+
+        size_t get_size() const;
+    };
+}
+module : private;
 namespace xox {
     //stack pool
-    SPool::SPool()
-            : size(0), pos(0), memory(nullptr) {}
-
-    SPool::SPool(size_t size) : pos(0) {
+    SPool::SPool():size(0), pos(0), memory(nullptr) {}
+    SPool::SPool(size_t size)
+            :pos(0) {
         this->memory = malloc(size);
         if (this->memory == nullptr) {
             ERROR
@@ -17,14 +67,12 @@ namespace xox {
         }
         this->size = size;
     }
-
     SPool::~SPool() {
         if (this->memory != nullptr) {
             free(this->memory);
             this->memory = nullptr;
         }
     }
-
     SPool::SPool(const SPool &s_pool)
             : size(s_pool.size), pos(s_pool.pos) {
         this->memory = malloc(s_pool.size);
@@ -34,7 +82,6 @@ namespace xox {
         }
         memcpy(memory, s_pool.memory, s_pool.size);
     }
-
     SPool::SPool(SPool &&s_pool) noexcept
             :size(s_pool.size),pos(s_pool.pos),memory(s_pool.memory){
         if (s_pool.memory != this->memory) {
@@ -45,7 +92,7 @@ namespace xox {
         }
     }
 
-    inline void SPool::resize(size_t _size) {
+    void SPool::resize(size_t _size) {
         this->memory = realloc(this->memory, _size);
         if (this->memory == nullptr) {
             ERROR
