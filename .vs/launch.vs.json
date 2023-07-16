@@ -1,0 +1,19 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "dll",
+      "exe": "",
+      "project": "CMakeLists.txt",
+      "projectTarget": "XoX-0.0.1.dll",
+      "name": "XoX-0.0.1.dll"
+    },
+    {
+      "type": "default",
+      "project": "CMakeLists.txt",
+      "projectTarget": "SandBox.exe",
+      "name": "SandBox.exe"
+    }
+  ]
+}

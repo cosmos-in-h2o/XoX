@@ -1,0 +1,26 @@
+# ninja log v5
+7	102	7112012391335308	CMakeFiles/XoX.dir/XoX/module/memory/memory.ixx.obj	33825c2d83e6561f
+17	101	7112012391335308	CMakeFiles/XoX.dir/XoX/module/log.ixx.obj	11d023af2a23171e
+23	2370	7112012355966343	CMakeFiles/XoX.dir/XoX/module/memory/smart_stack_pool.ixx.obj	4bc4e1472c0d37d0
+44	2371	7112012355986391	CMakeFiles/XoX.dir/XoX/src/memory/smart_stack_pool.cc.obj	47ff1f5264b449c
+12	477	7112012395089048	CMakeFiles/XoX.dir/XoX/module/memory/stack_pool.ixx.obj	39a8ab3f502c49af
+50	2346	7112012355745317	CMakeFiles/XoX.dir/XoX/module/xox.ixx.obj	7b09318600088bad
+22	270	7112012673344067	CMakeFiles/SandBox.dir/XoX/module/xox.ixx.obj	169861565e58c531
+1	612	7112012396436957	CMakeFiles/XoX.dir/XoX/module/delegate.ixx.obj	9f02301f71d38448
+0	168	7112013117153485	build.ninja	7b7dfc5683566edd
+38	2382	7112012356096343	CMakeFiles/XoX.dir/XoX/src/memory/stack_pool.cc.obj	6b9a1d5b8d0d2549
+1	173	7111069989903880	XoX-0.0.1.dll	d126a89298439c9c
+1	173	7111069989903880	XoX-0.0.1.lib	d126a89298439c9c
+11	267	7112012673303379	CMakeFiles/SandBox.dir/XoX/module/log.ixx.obj	657711ebe7d43b73
+15	362	7110350453269618	CMakeFiles/SandBox.dir/XoX/module/memory/smart_stack_pool.ixx.obj	8cfe0c62159ed873
+15	266	7112012673303379	CMakeFiles/SandBox.dir/XoX/module/memory/memory.ixx.obj	1edbb4559d3cce14
+23	453	7110350454175192	CMakeFiles/SandBox.dir/XoX/module/memory/stack_pool.ixx.obj	2e5d2629d369ff70
+2	561	7112012782142794	CMakeFiles/SandBox.dir/XoX/module/delegate.ixx.obj	5befeb30e8adfd11
+6	799	7112012678646002	CMakeFiles/SandBox.dir/SandBox/src/main.cc.obj	1aa2a59530261018
+453	586	7111079034866020	SandBox.exe	c497e4dcd9f11413
+0	66	7112013117153485	build.ninja	7b7dfc5683566edd
+0	530	7112013119012752	SandBox.exe	3a64578404246edf
+1	835	7112013384002234	CMakeFiles/SandBox.dir/SandBox/src/main.cc.obj	1aa2a59530261018
+836	966	7112013385018889	SandBox.exe	3a64578404246edf
+1	876	7112013681195211	CMakeFiles/SandBox.dir/SandBox/src/main.cc.obj	1aa2a59530261018
+877	1009	7112013682236315	SandBox.exe	3a64578404246edf

@@ -1,0 +1,4 @@
+D:/Program/XoX/cmake-build-debug/CMakeFiles/XoX.dir
+D:/Program/XoX/cmake-build-debug/CMakeFiles/SandBox.dir
+D:/Program/XoX/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Program/XoX/cmake-build-debug/CMakeFiles/rebuild_cache.dir
