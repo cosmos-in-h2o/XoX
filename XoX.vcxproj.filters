@@ -47,5 +47,14 @@
     <ClCompile Include="core\core.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="core\memory\heap.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\memory\heap.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\memory\memory.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

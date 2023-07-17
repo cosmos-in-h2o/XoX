@@ -174,7 +174,7 @@ namespace eastl
 	///
 	/// Implements a dynamic array.
 	///
-	template <typename T, typename Allocator = EASTLAllocatorType>
+	template <typename T, typename Allocator = eastl::allocator>
 	class vector : public VectorBase<T, Allocator>
 	{
 		typedef VectorBase<T, Allocator>                      base_type;

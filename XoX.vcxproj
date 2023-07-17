@@ -104,8 +104,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;XOX_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>D:\Program\XoX\thirdparty\entt\include;D:\Program\XoX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>D:\Program\XoX\thirdparty\EASTL\include;D:\Program\XoX\thirdparty\entt\include;D:\Program\XoX\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,6 +134,9 @@
   <ItemGroup>
     <ClCompile Include="core\core.ixx" />
     <ClCompile Include="core\log.ixx" />
+    <ClCompile Include="core\memory\heap.cc" />
+    <ClCompile Include="core\memory\heap.ixx" />
+    <ClCompile Include="core\memory\memory.ixx" />
     <ClCompile Include="core\os.ixx" />
     <ClCompile Include="core\world.cc" />
     <ClCompile Include="core\world.ixx" />
