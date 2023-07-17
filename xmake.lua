@@ -1,3 +1,3 @@
-set_language("c++20")
+set_languages("c++20")
 target("XoX")
-    add_files("")
+    add_files("editor/src/main.cc")

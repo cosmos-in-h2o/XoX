@@ -1,4 +1,0 @@
-ToolSet: 17.0 (local)@E:\SoftWare\VS2022\IDE\Community
-Options: msvc.arch=amd64
-
-Options:-DCMAKE_MAKE_PROGRAM=E:/SoftWare/Scoop/apps/clion/current/IDE/bin/ninja/win/x64/ninja.exe

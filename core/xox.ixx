@@ -1,4 +1,3 @@
 export module xox;
-export import xox.log;
-export import xox.memory;
-export import xox.delegate;
+export import xox.core;
+export import xox.thirdparty;

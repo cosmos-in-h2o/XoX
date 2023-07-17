@@ -1,4 +1,4 @@
-export module xox.log;
+export module xox.core.log;
 
 namespace xox::log{
     export void msg(auto...args);

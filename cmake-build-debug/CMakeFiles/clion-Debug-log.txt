@@ -1,4 +1,0 @@
-E:\SoftWare\Scoop\apps\clion\current\IDE\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=E:/SoftWare/Scoop/apps/clion/current/IDE/bin/ninja/win/x64/ninja.exe -G Ninja -S D:\Program\XoX -B D:\Program\XoX\cmake-build-debug
--- Configuring done
--- Generating done
--- Build files have been written to: D:/Program/XoX/cmake-build-debug
