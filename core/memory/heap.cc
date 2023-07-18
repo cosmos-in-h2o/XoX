@@ -1,6 +1,12 @@
 #include <cstdlib>
 #include <cstring>
 import xox.core.memory.heap;
+
+void _alignment(size_t& size){
+	if (size % sizeof(void*) != 0)
+		size += sizeof(void*) - (size % sizeof(void*));
+}
+
 namespace xox {
 	xox::HeapPool::HeapPool(size_t size)
 		:_from_front(false),_size(size){
@@ -40,24 +46,15 @@ namespace xox {
 	void* HeapPool::allocate(size_t size){
 		int mem_block = 0;
 		//内存对齐
-		if (size % 4 != 0)
-			size += 4 - (size % 4);
+		::_alignment(size);
 		//从前往后遍历
-		if (this->_from_front) {
-			for (int i = 0; i < this->_blocks.size(); ++i) {
-				if (this->_blocks[i].size >= size) {
-					mem_block = i;
-					break;
-				}
-			}
-		}
+		
 		//从后往前遍历
-		else {
-			for (int i = this->_blocks.size()-1; i >= 0; --i) {
-				if (this->_blocks[i].size >= size) {
-					mem_block = i;
-					break;
-				}
+		
+		for (int i = this->_blocks.size()-1; i >= 0; --i) {
+			if (this->_blocks[i].size >= size) {
+				mem_block = i;
+				break;
 			}
 		}
 		//内存不足时
@@ -68,7 +65,6 @@ namespace xox {
 			else 
 				this->resize(this->_size + HeapPool::increase_bytes);
 			//增加内存后直接进行分配
-			//当前只有尾部有内存，所以不管遍历顺序直接从前往后分配,因此结果也应该是未分配前的begin
 			void* result=this->_blocks.back().begin;
 			this->_blocks.back().begin=(void*)((size_t)(this->_blocks.back()).begin+size);
 			return result;
