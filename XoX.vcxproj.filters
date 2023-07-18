@@ -29,19 +29,7 @@
     <ClCompile Include="editor\src\main.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="core\world.ixx">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="core\os.ixx">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="core\world.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="thirdparty\entt\entt.ixx">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="thirdparty\thirdparty.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="core\core.ixx">
@@ -54,6 +42,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="core\memory\memory.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\world.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\memory\malloc.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\memory\malloc.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,3 +1,4 @@
 export module xox;
 export import xox.core;
-export import xox.thirdparty;
+
+//第三方库

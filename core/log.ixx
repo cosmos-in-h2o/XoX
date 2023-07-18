@@ -12,9 +12,3 @@ namespace xox::log{
     export void warn(auto...args);
     export void error(auto...args);
 }
-
-
-
-
-void func() {
-}
