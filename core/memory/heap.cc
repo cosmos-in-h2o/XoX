@@ -14,7 +14,7 @@ namespace xox {
 		return (void*)((size_t)this->_memory+pos);
 	}
 
-	xox::HeapPool::HeapPool(size_t size)
+	HeapPool::HeapPool(size_t size)
 		:_from_front(false),_size(size){
 		this->_memory = Memory::malloc(size);
 		this->_blocks.push_back(MemoryBlock(this->_memory,(void*)(((size_t)(this->_memory)) + size),size));
@@ -23,26 +23,26 @@ namespace xox {
 		}
 	}
 
-	xox::HeapPool::~HeapPool(){
+	HeapPool::~HeapPool(){
 		Memory::free(this->_memory);
 		this->_memory = nullptr;
 	}
 
 	//默认分配0.5MB内存
-	xox::HeapPool::HeapPool():HeapPool(524288){}
+	HeapPool::HeapPool():HeapPool(524288){}
 
-	xox::HeapPool::HeapPool(const HeapPool& hp)
+	HeapPool::HeapPool(const HeapPool& hp)
 		:_blocks(hp._blocks),_size(hp._size){
 		memcpy(this->_memory,hp._memory,hp._size);
 	}
 
-	xox::HeapPool::HeapPool(HeapPool&& hp) noexcept
+	HeapPool::HeapPool(HeapPool&& hp) noexcept
 		:_blocks(std::move(hp._blocks)),_size(std::move(hp._size)) {
 		this->_memory = hp._memory;
 		hp._memory = nullptr;
 	}
 
-	void xox::HeapPool::resize(size_t size){
+	void HeapPool::resize(size_t size){
 		this->_memory = Memory::realloc(this->_memory, size);
 		if (this->_memory == NULL) {
 
@@ -102,7 +102,10 @@ namespace xox {
 		return nullptr;
 	}
 
-	void xox::HeapPool::deallocate(void*& mem_ptr, size_t size){
+	void HeapPool::reallocate(void* ptr, size_t new_size, size_t old_size) {
+	}
+
+	void HeapPool::deallocate(size_t size,void*& mem_ptr){
 		//判断是否在范围内
 		if ((size_t)mem_ptr<(size_t)this->_memory || (size_t)mem_ptr>(size_t)this->_memory + this->_size) {
 
@@ -151,6 +154,4 @@ namespace xox {
 	size_t HeapPool::get_size(){
 		return this->_size;
 	}
-
-
 }

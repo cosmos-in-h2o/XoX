@@ -37,7 +37,8 @@ namespace xox {
 		void resize(size_t size);
 		//指定大小分配
 		void* allocate(size_t size);
-		void deallocate(void*& mem_ptr,size_t size);
+		void* reallocate(void* ptr, size_t new_size,size_t old_size);
+		void deallocate(size_t size,void*& mem_ptr);
 		size_t get_size();
 		//模板函数
 		//分配内置指定类型
@@ -57,7 +58,7 @@ namespace xox {
 			return result;
 		}
 		template<typename T_> void deallocate(T_*& mem_ptr) {
-			this->deallocate(mem_ptr, sizeof(T_));
+			this->deallocate(sizeof(T_), mem_ptr);
 		}
 		template<typename CT_> void deallocateClass(CT_*& obj_ptr) {
 			//调用析构函数
@@ -79,7 +80,7 @@ namespace xox {
 		}
 
 		~PArray() {
-			this->_pool_ptr->deallocate(this->_ptr, sizeof(T_) * size);
+			this->_pool_ptr->deallocate(sizeof(T_) * size, this->_ptr);
 		}
 
 		const T_& operator[](size_t index) {
@@ -89,11 +90,8 @@ namespace xox {
 			return *(T_*)((size_t)this->_ptr+index*sizeof(T_));
 		}
 
-		T_ operator[](size_t index) {
-			if (size < index) {
-
-			}
-			return *(T_*)((size_t)this->_ptr + index * sizeof(T_));
+		const T_& at(size_t index) {
+			return this->operator[](index);
 		}
 	};
 }
