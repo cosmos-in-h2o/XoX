@@ -135,7 +135,16 @@
     <ClInclude Include="include\xox\xox_def.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="core\aes\aes.ixx" />
+    <ClCompile Include="core\aes\atom.ixx" />
+    <ClCompile Include="core\aes\electron.ixx" />
+    <ClCompile Include="core\aes\world.cc" />
+    <ClCompile Include="core\aes\world.ixx" />
     <ClCompile Include="core\core.ixx" />
+    <ClCompile Include="core\error\error.ixx" />
+    <ClCompile Include="core\error\error_list.ixx" />
+    <ClCompile Include="core\xtl\safe_refcount.ixx" />
+    <ClCompile Include="core\xtl\vector.ixx" />
     <ClCompile Include="core\log.ixx" />
     <ClCompile Include="core\memory\heap.cc" />
     <ClCompile Include="core\memory\heap.ixx" />
@@ -143,6 +152,8 @@
     <ClCompile Include="core\memory\malloc.cc" />
     <ClCompile Include="core\memory\memory.ixx" />
     <ClCompile Include="core\os.ixx" />
+    <ClCompile Include="core\xtl\string.ixx" />
+    <ClCompile Include="core\xtl\xtl.ixx" />
     <ClCompile Include="core\world.ixx" />
     <ClCompile Include="core\xox.ixx" />
     <ClCompile Include="editor\src\main.cc" />

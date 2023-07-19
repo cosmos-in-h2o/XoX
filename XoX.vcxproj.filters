@@ -53,5 +53,38 @@
     <ClCompile Include="core\memory\malloc.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="core\xtl\xtl.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\xtl\string.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\error\error.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\error\error_list.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\xtl\vector.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\xtl\safe_refcount.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\aes\aes.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\aes\world.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\aes\atom.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\aes\electron.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\aes\world.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

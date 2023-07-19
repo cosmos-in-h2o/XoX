@@ -1,9 +1,10 @@
 #ifndef XOX_DEF_HPP
 #define XOX_DEF_HPP
 
+//获取字符串
 #ifndef _STR
-#define _STR(m_x) #m_x
-#define _MKSTR(m_x) _STR(m_x)
+#define _STR(X) #X
+#define _MKSTR(X) _STR(X)
 #endif
 
 //编译器为MSVC
@@ -26,7 +27,7 @@
 	inline void CLASS::set_##VAR(const decltype(CLASS::VAR)& _##VAR ){this->VAR=_##VAR;}
 #include <cstdint>
 
-
+//typedef
 // 无论如何都应该inline
 #ifndef _ALWAYS_INLINE_
 #if defined(__GNUC__)
@@ -47,4 +48,23 @@
 #endif
 #endif
 
+//需要引入safe_refcount模块才能使用
+#define SAFE_NUMERIC_TYPE_PUN_GUARANTEES(TYPE)                    \
+	static_assert(sizeof(SafeNumeric<TYPE>) == sizeof(TYPE));   \
+	static_assert(alignof(SafeNumeric<TYPE>) == alignof(TYPE)); \
+	static_assert(std::is_trivially_destructible<std::atomic<TYPE>>::value);
+//需要引入safe_refcount模块才能使用
+#define SAFE_FLAG_TYPE_PUN_GUARANTEES                \
+	static_assert(sizeof(SafeFlag) == sizeof(bool)); \
+	static_assert(alignof(SafeFlag) == alignof(bool));
+
+//连接所有内置电子到编辑器，需要引入模块xox.world
+#define CONNECT_ALL_ELE
+
+//快捷连接电子与编辑器
+#define XOXELECTRON(CLASS) \
+private: \
+	static String _get_class_name(){return STR(CLASS);}
+#define EXPORT_VAR()
+#define EXPORT_FUNC()
 #endif //XOX_DEF_HPP
