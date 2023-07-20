@@ -16,11 +16,4 @@ namespace xox {
 	_FORCE_INLINE_ void Memory::free(void* ptr){
 		::mi_free_aligned(ptr,ALIGNMENT);
 	}
-
-	_FORCE_INLINE_ void* DefaultAllocator::alloc(size_t size){
-		return ::mi_malloc_aligned(size, ALIGNMENT);
-	}
-	_FORCE_INLINE_ void DefaultAllocator::free(void* ptr){
-		::mi_free_aligned(ptr, ALIGNMENT);
-	}
 }

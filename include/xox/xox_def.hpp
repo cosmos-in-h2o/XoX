@@ -48,11 +48,11 @@
 #endif
 #endif
 
-//需要引入safe_refcount模块才能使用
+//需要引入safe_refcount模块,atomic和type_traits才能使用
 #define SAFE_NUMERIC_TYPE_PUN_GUARANTEES(TYPE)                    \
-	static_assert(sizeof(SafeNumeric<TYPE>) == sizeof(TYPE));   \
-	static_assert(alignof(SafeNumeric<TYPE>) == alignof(TYPE)); \
-	static_assert(std::is_trivially_destructible<std::atomic<TYPE>>::value);
+	static_assert(sizeof(::xox::SafeNumeric<TYPE>) == sizeof(TYPE));   \
+	static_assert(alignof(::xox::SafeNumeric<TYPE>) == alignof(TYPE)); \
+	static_assert(::std::is_trivially_destructible<::std::atomic<TYPE>>::value);
 //需要引入safe_refcount模块才能使用
 #define SAFE_FLAG_TYPE_PUN_GUARANTEES                \
 	static_assert(sizeof(SafeFlag) == sizeof(bool)); \

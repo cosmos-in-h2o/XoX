@@ -102,7 +102,7 @@ namespace xox {
 		return nullptr;
 	}
 
-	void HeapPool::reallocate(void* ptr, size_t new_size, size_t old_size) {
+	void* HeapPool::reallocate(void* ptr, size_t new_size, size_t old_size) {
 	}
 
 	void HeapPool::deallocate(size_t size,void*& mem_ptr){

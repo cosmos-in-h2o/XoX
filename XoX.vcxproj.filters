@@ -80,10 +80,19 @@
     <ClCompile Include="core\aes\atom.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="core\aes\electron.ixx">
+    <ClCompile Include="core\aes\world.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="core\aes\world.cc">
+    <ClCompile Include="core\memory\allocator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\memory\allocator.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\xtl\cow_data.ixx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="core\io\resource.ixx">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

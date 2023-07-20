@@ -2,13 +2,14 @@ module;
 #include <xox/xox_def.hpp>
 #include <entt/entt.hpp>
 module xox.core.aes.world;
+import xox.core.aes.atom;
 
 namespace xox {
-	_FORCE_INLINE_ entt::registry& World::_getReg() {
-		return this->_registry;
+	Atom World::createAtom(){
+		return this->_registry.create;
 	}
 
-	_FORCE_INLINE_ entt::entity World::createAtom(){
-		return this->_registry.create();
+	_FORCE_INLINE_ void World::destoryAtom(Atom atom){
+		this->_registry.destory(atom);
 	}
 }

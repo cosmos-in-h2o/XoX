@@ -5,7 +5,7 @@ import xox.core.memory.malloc;
 import xox.core.error.error_list;
 
 namespace xox {
-	template<typename T> class CowData {};
+	template<typename T_> class CowData {};
 
 	export template<typename CT_, typename Allocator=DefaultAllocator> 
 	class BasicString {
