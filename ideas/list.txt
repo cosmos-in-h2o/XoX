@@ -1,1 +1,15 @@
-#pragma once
+接下来要做的：
+先把new和delete重载了
+xtl{
+	cowdata
+	vector
+	array
+	string
+	stringname
+	list
+	map
+	set
+	hashmap
+	hashset
+}
+完善HeapPool

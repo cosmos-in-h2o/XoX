@@ -1,2 +1,2 @@
 # XoX
-An engine.
+godot's extension.

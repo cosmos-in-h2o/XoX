@@ -48,10 +48,13 @@
 #endif
 #endif
 
+//对齐大小
+#define XOX_ALIGNMENT sizeof(void*)
+
 //需要引入safe_refcount模块,atomic和type_traits才能使用
 #define SAFE_NUMERIC_TYPE_PUN_GUARANTEES(TYPE)                    \
-	static_assert(sizeof(::xox::SafeNumeric<TYPE>) == sizeof(TYPE));   \
-	static_assert(alignof(::xox::SafeNumeric<TYPE>) == alignof(TYPE)); \
+	static_assert(sizeof(::xox::SafeSize<TYPE>) == sizeof(TYPE));   \
+	static_assert(alignof(::xox::SafeSize<TYPE>) == alignof(TYPE)); \
 	static_assert(::std::is_trivially_destructible<::std::atomic<TYPE>>::value);
 //需要引入safe_refcount模块才能使用
 #define SAFE_FLAG_TYPE_PUN_GUARANTEES                \

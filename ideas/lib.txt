@@ -1,0 +1,7 @@
+有关于第三方库现在的想法：
+数据结构:eastl(BSD)
+线代库:glm(MIT)
+内存管理:mimalloc(MIT)
+ECS与事件系统:entt(MIT)
+物理:PhysX(BSD)
+代码参考或引用部分:godot(MIT)
