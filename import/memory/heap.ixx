@@ -10,11 +10,11 @@ static void _alignment(size_t& size);
 
 namespace xox {
 	export struct XOX_API MemoryBlock {
-		void* begin;
-		void* end;
+		void* _begin;
+		void* _end;
 		size_t size;
 		MemoryBlock(void* begin = nullptr, void* end = nullptr, size_t size = 0) 
-			:begin(begin),end(end),size(size){}
+			:_begin(begin),_end(end),size(size){}
 	};
 
 	//单线程的

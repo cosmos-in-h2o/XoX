@@ -1,0 +1,34 @@
+2023-08-01 07:02:35 - Neovide panicked with the message 'If dragging, there should be a window details recorded'. (File: src\window\mouse_manager.rs; Line: 128, Column: 26)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: DefSubclassProc
+  17: DefSubclassProc
+  18: DispatchMessageW
+  19: CallWindowProcW
+  20: wglSwapBuffers
+  21: DispatchMessageW
+  22: DispatchMessageW
+  23: <unknown>
+  24: <unknown>
+  25: <unknown>
+  26: <unknown>
+  27: <unknown>
+  28: <unknown>
+  29: <unknown>
+  30: BaseThreadInitThunk
+  31: RtlUserThreadStart
+

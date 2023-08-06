@@ -14,7 +14,6 @@
 **/x64/
 #忽略构建系统生成的用于补全的文件
 compile_commands.json
-compile_flags.txt
 CMakeSettings.json
 #忽略特定后缀文件
 **.pdb
