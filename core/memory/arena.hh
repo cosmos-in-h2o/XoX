@@ -1,7 +1,8 @@
 #ifndef XOX_ARENA_HEADER
 #define XOX_ARENA_HEADER
-#include <xox/memory.hh>
+#include "core/memory/memory.hh"
 #include <xox/xox_def.hpp>
+
 namespace xox {
 static void _alignment(size_t &size) {
     if (size % sizeof(void *) != 0)

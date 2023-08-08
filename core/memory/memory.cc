@@ -1,5 +1,5 @@
+#include "memory.hh"
 #include <mimalloc.h>
-#include <xox/memory.hh>
 
 namespace xox {
 void *Memory::allocate(size_t size) { return ::mi_malloc(size); }

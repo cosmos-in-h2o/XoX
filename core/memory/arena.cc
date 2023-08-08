@@ -1,5 +1,6 @@
+#include "arena.hh"
 #include <stdexcept>
-#include <xox/arena.hh>
+
 namespace xox {
 MemoryBlock::MemoryBlock(void *begin, void *end) : _begin(begin), _end(end) {}
 size_t MemoryBlock::size() { return _rsize_ptr_sub_ptr(_end, _begin); }

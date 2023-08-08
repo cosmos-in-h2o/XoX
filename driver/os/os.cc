@@ -1,4 +1,5 @@
-module xox.driver.os;
+#include "os.hh"
+
 namespace xox{
 
 }

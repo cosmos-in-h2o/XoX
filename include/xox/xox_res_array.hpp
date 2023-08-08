@@ -1,1 +1,0 @@
-#define XOX_RES_ARRAY std::vector<ResCounter>
